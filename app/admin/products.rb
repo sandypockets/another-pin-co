@@ -5,7 +5,33 @@ ActiveAdmin.register Product do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :title, :image_1, :image_2, :image_3, :image_4, :image_5, :price, :is_featured, :collection_date, :description, :is_sold_out
+  permit_params :title, :image_1, :image_2, :image_3, :image_4, :image_5, :price, :is_featured, :collection_date,
+                :description, :is_sold_out
+
+  form do |f|
+    f.inputs "Product info" do
+      f.input :title
+      f.input :price
+      f.input :description
+      f.input :collection_date
+    end
+
+    f.inputs "Filters" do
+      f.input :is_featured, label: "Featured on homepage?"
+      f.input :is_sold_out, label: "Sold out?"
+    end
+
+    f.inputs "Images" do
+      f.input :image_1
+      f.input :image_2
+      f.input :image_3
+      f.input :image_4
+      f.input :image_5
+    end
+
+    f.actions
+  end
+
   #
   # or
   #
@@ -14,5 +40,5 @@ ActiveAdmin.register Product do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end
