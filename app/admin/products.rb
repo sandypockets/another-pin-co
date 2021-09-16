@@ -22,7 +22,7 @@ ActiveAdmin.register Product do
   end
 
   form do |f|
-    f.inputs "Product info" do
+    f.inputs "Product about" do
       f.input :title
       f.input :price
       f.input :description

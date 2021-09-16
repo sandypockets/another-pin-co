@@ -1,10 +1,6 @@
 <section>
-  <% @products.each do |product| %>
-    <h3 class="text-5xl">
-      <%= link_to product.title, product_path(product) %>
-    </h3>
-    <div>
-      <%= image_tag product.image_1.thumb.url %>
-    </div>
-  <% end %>
+  <h2 class="m-5 text-xl">2021 Collection</h2>
+  <div class="grid grid-flow-row grid-cols-4 grid-rows-3 gap-0">
+    <%= render partial: "products/product", collection: @products %>
+  </div>
 </section>
