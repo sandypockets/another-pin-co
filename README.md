@@ -1,24 +1,18 @@
-# README
+# 🚧 Work in Progress
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Another Pin Co.
+A Ruby on Rails ecommerce application for an Enamel Pin shop. 
 
-Things you may want to cover:
+## Built with
 
-* Ruby version
+* Ruby on Rails
+* Active Admin
+* Tailwind CSS
 
-* System dependencies
+## Getting started
 
-* Configuration
+## Dependencies
+* Ruby 2.6.3
+* Rails 6.1.4
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Database
