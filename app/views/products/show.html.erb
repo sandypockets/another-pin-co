@@ -1,0 +1,18 @@
+<section>
+  <h2 class="text-5xl">
+    <%= @product.title %>
+  </h2>
+  <p>
+    <%= simple_format @product.description %>
+  </p>
+  <span>
+    <%= number_to_currency(@product.price / 100) %>
+  </span>
+  <div class="p-5">
+    <%= image_tag @product.image_1.thumb.url %>
+  </div>
+
+  <p>
+    <%= link_to "Back to all products", products_path %>
+  </p>
+</section>

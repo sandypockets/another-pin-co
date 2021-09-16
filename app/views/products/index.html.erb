@@ -1,8 +1,10 @@
-<% @products.each do |product| %>
-  <h3 class="text-5xl">
-    <%= product.title %>
-  </h3>
-
-  <%= image_tag product.image_1.thumb.url %>
-
-<% end %>
+<section>
+  <% @products.each do |product| %>
+    <h3 class="text-5xl">
+      <%= link_to product.title, product_path(product) %>
+    </h3>
+    <div>
+      <%= image_tag product.image_1.thumb.url %>
+    </div>
+  <% end %>
+</section>
