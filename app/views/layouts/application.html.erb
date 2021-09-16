@@ -20,7 +20,7 @@
       <a class="px-2">
 
         <%= link_to "#" do %>
-          Cart #<%= @current_cart.id %> (0)
+          Cart (<%= @current_cart.total_quantity %>)
         <% end %>
           </a>
     </nav>
