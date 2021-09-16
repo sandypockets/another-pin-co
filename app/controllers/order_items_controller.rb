@@ -15,7 +15,7 @@ class OrderItemsController < ApplicationController
     @order_item = OrderItem.find(params[:id])
     @order_item.update(form_params)
     flash[:success] = 'Cart updated!'
-    redirect_to product_path(@product)
+    redirect_to cart_path
   end
 
   def destroy

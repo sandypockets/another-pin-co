@@ -27,7 +27,12 @@
                     <%= number_to_currency(item.product.price / 100) %>
                   </td>
                   <td class="">
-                    <%= item.quantity %>
+                    <%= simple_form_for [item.product, item] do |f| %>
+                      <div class="flex">
+                      <%= f.input :quantity, label: false, input_html: { class: 'w-12 mx-1 rounded-md' } %>
+                      <button><%= f.button :submit, "Update", class: 'p-2 pb-3 mb-1 w-24 mx-1 rounded-md' %></button>
+                      </div>
+                    <% end %>
                   </td>
                   <td class="">
                     <%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %>
