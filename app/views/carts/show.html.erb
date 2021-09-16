@@ -29,13 +29,15 @@
                   <td class="">
                     <%= simple_form_for [item.product, item] do |f| %>
                       <div class="flex">
-                      <%= f.input :quantity, label: false, input_html: { class: 'w-12 mx-1 rounded-md' } %>
+                      <%= f.input :quantity, label: false, input_html: { class: 'w-16 mx-1 rounded-md' } %>
                       <button><%= f.button :submit, "Update", class: 'p-2 pb-3 mb-1 w-24 mx-1 rounded-md' %></button>
                       </div>
                     <% end %>
                   </td>
-                  <td class="">
+                  <td class="mx-5">
+                    <button class="p-2 pb-3 mb-1 rounded-md bg-red-100">
                     <%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %>
+                    </button>
                   </td>
                 </tr>
               <% end %>

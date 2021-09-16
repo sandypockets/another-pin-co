@@ -1,20 +1,20 @@
 <section class="flex justify-center mt-36">
   <div class="flex bg-gray-50 shadow-md rounded-md p-5">
-  <div>
-    <div class="p-5">
-      <%= image_tag @product.image_1.thumb.url %>
-    </div>
+    <div>
+      <div class="p-5">
+        <%= image_tag @product.image_1.thumb.url %>
+      </div>
 
-  </div>
-  <div class="p-5">
-    <h2 class="text-5xl mb-2">
-      <%= @product.title %>
-    </h2>
-    <span class="font-semibold text-xl">
-      <%= number_to_currency(@product.price / 100) %>
-    </span>
-    <p><%= simple_format @product.description %></p>
-  </div>
+    </div>
+    <div class="p-5">
+      <h2 class="text-5xl mb-2">
+        <%= @product.title %>
+      </h2>
+      <span class="font-semibold text-xl">
+        <%= number_to_currency(@product.price / 100) %>
+      </span>
+      <p><%= simple_format @product.description %></p>
+    </div>
   </div>
 
   <%= simple_form_for [@product, @order_item] do |f| %>

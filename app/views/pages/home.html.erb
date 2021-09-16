@@ -7,12 +7,12 @@
   <h2 class="flex justify-center text-white text-4xl mb-12">
     Featured Pins
   </h2>
-  <div class="flex justify-center">
+  <div class="flex flex-col lg:flex-row justify-center">
     <% @featured_products.each do |product| %>
-      <div class="flex flex-col mx-6 bg-gray-50 px-5 pt-5 rounded-md">
-        <div class="w-96">
+      <div class="flex flex-col mx-16 lg:mx-6 bg-gray-50 px-5 pt-5 rounded-md shadow-lg my-8 lg:my-0">
+        <div class="w-30 lg:w-54">
           <%= link_to product_path(product) do %>
-            <%= image_tag product.image_1.url %>
+            <%= image_tag product.image_1.url, class: "rounded-lg" %>
           <% end %>
         </div>
         <div class="flex justify-between px-1 pt-6 pb-3">
@@ -21,5 +21,10 @@
         </div>
       </div>
     <% end %>
+  </div>
+</section>
+<section>
+  <div class="w-screen">
+    <%= image_tag "enamel-pin-bomb.jpg", style: 'height: 45rem', class: 'w-screen object-cover' %>
   </div>
 </section>
