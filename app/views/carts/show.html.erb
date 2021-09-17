@@ -6,37 +6,37 @@
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div class="mx-12 shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
             <table class="table-auto w-full">
-              <thead class="mr-24 border-b-2 border-gray-50">
+              <thead class="border-b-2 border-gray-50 table-header-group">
               <tr class="h-12 bg-gray-100">
-                <th class="flex flex-row justify-start p-6">Item</th>
-                <th class="py-6 pr-10">Price</th>
-                <th class="py-6 pr-10">Qty</th>
-                <th class="pr-12">Actions</th>
+                <th class="">Item</th>
+                <th class="">Price</th>
+                <th class="">Qty</th>
+                <th class="">Actions</th>
               </tr>
               </thead>
               <tbody>
               <% @current_cart.order_items.each do |item| %>
                 <tr class="border-b-2 border-gray-50 px-6 w-full">
                   <td class="flex flex-row">
-                    <div class="w-36 p-6">
+                    <div class="w-36 p-6 ml-24">
                       <%= image_tag item.product.image_1.thumb.url %>
                     </div>
                     <p class="flex flex-col justify-center"><%= item.product.title %></p>
                   </td>
-                  <td class="">
+                  <td class="text-center">
                     <%= number_to_currency(item.product.price / 100) %>
                   </td>
-                  <td class="">
+                  <td class="flex justify-center">
                     <%= simple_form_for [item.product, item] do |f| %>
                       <div class="flex">
-                      <%= f.input :quantity, label: false, input_html: { class: 'w-16 mx-1 rounded-md' } %>
-                      <button><%= f.button :submit, "Update", class: 'p-2 pb-3 mb-1 w-24 mx-1 rounded-md' %></button>
+                        <%= f.input :quantity, label: false, input_html: { class: 'w-16 mx-1 rounded-md' } %>
+                        <button><%= f.button :submit, "Update", class: 'p-2 pb-3 mb-1 w-24 mx-1 rounded-md' %></button>
                       </div>
                     <% end %>
                   </td>
-                  <td class="mx-5">
+                  <td class="mx-2 h-36 text-center">
                     <button class="p-2 pb-3 mb-1 rounded-md bg-red-100">
-                    <%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %>
+                      <%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %>
                     </button>
                   </td>
                 </tr>
