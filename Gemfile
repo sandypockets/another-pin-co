@@ -38,6 +38,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'simple_form'
+gem 'country_select'
 
 gem 'activeadmin'
 gem 'devise'

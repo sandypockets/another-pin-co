@@ -47,6 +47,12 @@
         </div>
       </div>
     </div>
+
+    <p>Total <%= number_to_currency(@current_cart.total_price / 100) %></p>
+
+    <p>
+      <%= link_to 'Check out', new_order_path %>
+    </p>
   <% else %>
     <p class="mx-6">Your cart is currently empty. Go pick out something nice.</p>
   <% end %>
