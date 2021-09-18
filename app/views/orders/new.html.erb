@@ -14,4 +14,12 @@
     <%= f.input :postal_code %>
     <%= f.button :submit %>
   <% end %>
+
+  <script>
+
+    const stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe][:stripe_public_key] %>")
+
+  </script>
+
+
 </section>
