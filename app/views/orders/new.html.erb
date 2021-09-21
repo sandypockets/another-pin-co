@@ -12,12 +12,31 @@
     <%= f.input :address_2 %>
     <%= f.input :city %>
     <%= f.input :postal_code %>
+
+    <div id="card-errors"></div>
+    <div id="card"></div>
+
     <%= f.button :submit %>
   <% end %>
 
   <script>
 
     const stripe = Stripe("<%= Rails.application.credentials[Rails.env.to_sym][:stripe][:stripe_public_key] %>")
+    const elements = stripe.elements()
+    const card = elements.create("card")
+    card.mount("#card")
+
+    $("form.new_order").on("submit", function (event) {
+        event.preventDefault()
+        stripe.createToken(card).then(function (result) {
+            if (result.error) {
+                $("#card-errors").html(result.error.message)
+            } else {
+                $("form.new_order").append(`<input type=hidden name='order[stripe_token]' value=${result.token}>`)
+                $("form.new_order").get(0).submit()
+            }
+        })
+    })
 
   </script>
 
