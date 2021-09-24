@@ -22,8 +22,8 @@ class Order < ApplicationRecord
         amount: total_price,
         currency: 'usd',
         source: stripe_token,
-        description: "Order for #{email}")
-
+        description: "Order for #{email}"
+      )
       save
     else
       false
